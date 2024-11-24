@@ -45,6 +45,9 @@ end
 
 
 class Dog < Animal
+    def to_s
+        "#{@name} the dog, age: #{age}"
+    end
 end
 
 
@@ -75,6 +78,7 @@ whisky.name = "Whisky"
 
 fido = Dog.new
 fido.name = "Fido"
+fido.age = 4
 
 polly = Bird.new
 polly.name = "Polly"
@@ -92,3 +96,17 @@ dillon.name = "Dillon the bronik"
 dillon.age = 2
 
 dillon.move("burrow")
+
+puts "====== about representative strings ================="
+
+puts fido, dillon # default representation as a string
+puts "==============="
+puts fido.to_s, dillon.to_s  # will output the same)
+
+
+puts "==============="
+
+puts Dog.superclass
+puts Animal.superclass
+
+# Advantage - override the to_s method (as a __repr__ method in python3) - see above
